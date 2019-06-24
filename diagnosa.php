@@ -25,24 +25,24 @@
                             <section class="container">
                                 <div class="col-md-12 col-sm-12">
                                     <div class="service-info">
-                                    <h2 class="head-title lg-line">Diagnosa</h2>
+                                        <h2 class="head-title lg-line">Diagnosa</h2>
                                     </div>
                                     <p>
-                                    <form method="get" action="hasil.php">
-                                    <div>
-                                        <input type="checkbox" name="check_list[]" value="G01">Sakit pada bagian kaki dan tungkai<br>
-                                        <input type="checkbox" name="check_list[]" value="G02">Kelemahan otot dan spasme otot<br>
-                                        <input type="checkbox" name="check_list[]" value="G03">Rasa sakit menjalar<br>
-                                        <input type="checkbox" name="check_list[]" value="G04">Kematian rasa poada kaki, kesemutan, perasaan tidak nyaman sepertiu rasa perih dan terbakar<br>
-                                        <input type="checkbox" name="check_list[]" value="G05">Rasa sakit tidak menjalar<br>
-                                        <input type="checkbox" name="check_list[]" value="G06">Sakit kepala ditempat cervical<br>
-                                        <input type="checkbox" name="check_list[]" value="G07">Sakit mata dibelkang telinga<br>
-                                        <input type="checkbox" name="check_list[]" value="G08">Penglihatan buram<br>
-                                    </div>
-                                    <div>
-                                        <br><input type="submit" name="submit" value="Diagnosa">
-                                    </div>
-                                    </form>
+                                        <form method="get" action="hasil.php">
+                                            <div>
+                                                <?php
+                                                include "koneksi.php";
+                                                $query = "SELECT * from gejala";
+                                                $hasil = mysqli_query($koneksi, $query);
+                                                while ($data = mysqli_fetch_array($hasil)) {
+                                                    echo "<input type='checkbox' name='check_list[]' value='$data[kode]'>  $data[keterangan]<br>";
+                                                }
+                                                ?>
+                                            </div>
+                                            <div>
+                                                <br><input type="submit" name="submit" value="Diagnosa">
+                                            </div>
+                                        </form>
                                     </p>
                                 </div>
                             </section>

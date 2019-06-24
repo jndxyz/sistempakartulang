@@ -4,7 +4,7 @@ include "../koneksi.php";
 $gejala = $_GET ['check_list'];
 $tanda_gejala = ["G01","G02","G03"];
 
-$data = mysqli_query($koneksi, "SELECT * FROM penyakit");
+// $data = mysqli_query($koneksi, "SELECT * FROM penyakit");
 
 // var_dump($gejala);
 // if (in_array(array("G01", "G02", "G03"), $gejala)) {

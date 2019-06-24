@@ -24,43 +24,29 @@
                         <div class="banner-info">
                             <?php
                             include "koneksi.php";
-                            $gejala = $_GET ['check_list'];
-                            $tanda_gejala = ["G01","G02","G03"];
-                            
-                            $data = mysqli_query($koneksi, "SELECT * FROM penyakit");
-                            
-                            // var_dump($gejala);
-                            // if (in_array(array("G01", "G02", "G03"), $gejala)) {
-                            //     echo "Sakti";
-                            // }
-                            // var_dump(in_array(array("G01","G02","G03"), $gejala)); 
-                            
-                            if ($gejala == $tanda_gejala){
-                                echo "Sakit";
+                            // $gejala = $_POST ['gejala'];
+                            $gejala = $_GET['check_list'];
+
+                            // echo $get_gejala;
+                            $get_gejala = implode(",", $gejala);
+                            // echo $get_gejala;
+                            $data = mysqli_query($koneksi, "SELECT * from rules");
+                            if(mysqli_num_rows($data)>0) { 
+                                while($row = mysqli_fetch_assoc($data)){ 
+                                    // echo $row['gejala'];
+                                    if ($get_gejala == $row['gejala']){
+                                            echo $row['penyakit'];
+                                    }
+                                }
                             }
                             
-                            // if (in_array("mac", $os)) {
-                            //     echo "Got mac";
+                            // var_dump($query);
+                            // $row['gejala'];
+                            // echo $row['gejala'];
+                            // if ($gejala == 'gejala'){
+                            //     echo 'penyakit';
+                            // }else{
                             // }
-                            
-                            // switch ($check_list) {
-                            //     case "G01,G02,G03":
-                            //         echo "Sakit Aja";
-                            //         break;
-                            //     case "G04,G05,G06":
-                            //         echo "Sakit Banget";
-                            //         break;
-                            //     default:
-                            //         # code...
-                            //         break;
-                            // }
-                            
-                            // if ($check_list=="G01, G02, G03") {
-                            //     echo "Sakit";
-                            // } else {
-                            //     echo "Tidak";
-                            // }
-                            
                             ?>
                         </div>
                     </div>
