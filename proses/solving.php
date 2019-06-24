@@ -1,63 +1,41 @@
 <?php
-include("../koneksi.php");
+include "../koneksi.php";
 
-if (isset($_GET['idpertanyaan'])) {
-	//tampilkan pertanyaan pertama
-	$idsolusi = $_GET['idpertanyaan'];
+$gejala = $_GET ['check_list'];
+$tanda_gejala = ["G01","G02","G03"];
 
-	$query = "SELECT * from gejala where kode='$idsolusi'";
-	// print_r($query);
-	$hasil = mysqli_query($koneksi, $query);
-	// print_r($hasil);
-	$data = mysqli_fetch_array($hasil, MYSQLI_BOTH);
+$data = mysqli_query($koneksi, "SELECT * FROM penyakit");
 
-	echo "<h1>DIAGNOSA</h1>";
-	echo $data['keterangan'] . "<br>";
-	// print_r($data);
-	// print_r($data['kode_penyakity']);
-	$kode2=$data['kode_penyakitY'];
-	$kode3=$data['kode_penyakitN'];
-	if ($kode2== "P00") {
-		//bentuk pertanyaan
-		echo "<form>";
-		echo "<input type='radio' name='idpertanyaan' value='" . $data['kondisi_ya'] . "'>Ya2<br>";
-		echo "<input type='radio' name='idpertanyaan' value='" . $data['kondisi_tidak'] . "'>Tidak2<br>";
-		echo "<input type='submit' value='Lanjut >> ' >";
-		echo "</form>";
-	} else {
-		// bentuk pertanyaan
-		echo "<form>";
-		echo "<input type='radio' name='idpenyakit' value='$kode2'>Ya3<br>";
-		echo "<input type='radio' name='idpenyakit' value='$kode3'>Tidak3<br>";
-		echo "<input type='submit' value='Lanjut >> ' >";
-		echo "</form>";
+// var_dump($gejala);
+// if (in_array(array("G01", "G02", "G03"), $gejala)) {
+//     echo "Sakti";
+// }
+// var_dump(in_array(array("G01","G02","G03"), $gejala)); 
 
-	}
-} else if(isset($_GET['idpenyakit'])){
-	// echo "berhasil";
-	
-	// $query = "SELECT * from penyakit where kode='$kode2'";
-	// print_r($query);
-	// $hasil = mysqli_query($koneksi, $query);
-	// print_r($hasil);
-	// $data = mysqli_fetch_array($hasil, MYSQLI_BOTH);
-	// print_r($data);
-	// echo $data['penyakit'] . "<br>";
-
-	$kodep = $_GET['idpenyakit'];
-
-	$query = "SELECT * from penyakit where kode='$kodep'";
-	// print_r($query);
-	
-	$hasil = mysqli_query($koneksi, $query);
-	// print_r($hasil);
-	// $kodep=['penyakit'];
-	// print_r($kodep);
-	foreach($hasil as $row)
-{
-	echo "Id is ".$row['penyakit']."<br>";
+if ($gejala == $tanda_gejala){
+    echo "Sakit";
 }
 
+// if (in_array("mac", $os)) {
+//     echo "Got mac";
+// }
 
-}
-die;
+// switch ($check_list) {
+//     case "G01,G02,G03":
+//         echo "Sakit Aja";
+//         break;
+//     case "G04,G05,G06":
+//         echo "Sakit Banget";
+//         break;
+//     default:
+//         # code...
+//         break;
+// }
+
+// if ($check_list=="G01, G02, G03") {
+//     echo "Sakit";
+// } else {
+//     echo "Tidak";
+// }
+
+?>

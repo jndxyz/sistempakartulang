@@ -15,7 +15,7 @@
                     <li><a href="info.php">Informasi</a></li>
                     <li><a href="cegah.php">Pencegahan</a></li>
                     <li><a href="rawat.php">Perawatan</a></li>
-                    <li><a href="diagnosa.php?idpertanyaan=G01">Diagnosa</a></li>
+                    <li><a href="diagnosa.php">Diagnosa</a></li>
                 </ul>
             </div>
         </div>

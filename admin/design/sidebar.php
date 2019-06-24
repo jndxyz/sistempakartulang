@@ -56,6 +56,18 @@
               <li><a class="" href="inputpenyakit.php">Tambah Data</a></li>
             </ul>
           </li>
+
+          <li class="sub-menu">
+          <a href="javascript:;" class="">
+                          <span>Rules</span>
+                          <span class="menu-arrow arrow_carrot-right"></span>
+                      </a>
+            <ul class="sub">
+              <li><a class="" href="rules.php">lIHAT dATA</a></li>
+              <li><a class="" href="inputrules.php">Tambah Data</a></li>
+            </ul>
+          </li>
+
         </ul>
       </div>
     </aside>

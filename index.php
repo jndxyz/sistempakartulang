@@ -26,7 +26,7 @@
             <div class="banner-text text-center">
               <h1 class="white">Selamat Datang</h1>
               <p>Di Website Sistem Pakar Diagnosa Penykit Tulang Belakang</p>
-              <a href="diagnosa.php" class="btn btn-appoint">Make an Appointment.</a>
+              <a href="diagnosa.php" class="btn btn-appoint">Mulai Diagnosa</a>
             </div>
           </div>
         </div>

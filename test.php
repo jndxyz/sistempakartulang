@@ -28,7 +28,7 @@
                                     <h2 class="head-title lg-line">Diagnosa</h2>
                                     </div>
                                     <p>
-                                    <form method="get" action="hasil.php">
+                                    <form method="get" action="proses/solving.php">
                                     <div>
                                         <input type="checkbox" name="check_list[]" value="G01">Sakit pada bagian kaki dan tungkai<br>
                                         <input type="checkbox" name="check_list[]" value="G02">Kelemahan otot dan spasme otot<br>
