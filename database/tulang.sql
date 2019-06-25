@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: May 23, 2019 at 09:00 AM
+-- Generation Time: Jun 25, 2019 at 10:39 AM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 7.1.27
 
@@ -87,7 +87,6 @@ CREATE TABLE `info` (
 --
 
 INSERT INTO `info` (`id`, `judul`, `isi`) VALUES
-(6, '21313123qweqweqwe', '123123wqeweqw111111111111111111111111112222222222222222221111																'),
 (7, '123123', '123123qweqweqweqsadsdasd');
 
 -- --------------------------------------------------------
@@ -154,6 +153,27 @@ INSERT INTO `rawat` (`id`, `judul`, `isi`) VALUES
 (1, 'qweqweqwe123123132', 'qweqweqwqw123123123123								'),
 (2, 'qweqweasdq1w3ea', 'qwe123123qawwsdsqwe');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `rules`
+--
+
+CREATE TABLE `rules` (
+  `kode` varchar(3) NOT NULL,
+  `gejala` varchar(50) NOT NULL,
+  `penyakit` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `rules`
+--
+
+INSERT INTO `rules` (`kode`, `gejala`, `penyakit`) VALUES
+('R01', 'G01,G02,G03', 'Cervical Syndrome'),
+('R02', 'G01,G03,G05', 'Heria Nukleus Pulposus'),
+('R03', 'G02,G04,G06', 'Low Back Pain');
+
 --
 -- Indexes for dumped tables
 --
@@ -193,6 +213,12 @@ ALTER TABLE `penyakit`
 --
 ALTER TABLE `rawat`
   ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `rules`
+--
+ALTER TABLE `rules`
+  ADD PRIMARY KEY (`kode`);
 
 --
 -- AUTO_INCREMENT for dumped tables
