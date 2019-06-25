@@ -44,7 +44,7 @@ include "koneksi.php";
                                 $query = "SELECT * from penyakit";
                                 $hasil = mysqli_query($koneksi, $query);
                                 while ($data = mysqli_fetch_array($hasil)) {
-                                    echo "<option value=$data[kode]>$data[penyakit]</option>";
+                                    echo "<option value='$data[penyakit]'>$data[penyakit]</option>";
                                 }
                                 ?>
                             </select>
@@ -53,7 +53,6 @@ include "koneksi.php";
                             <h3>Gejala</h3>
                         </label>
                         <div style="padding-bottom:50px">
-                        <!-- <input type="checkbox" name = "gejala" -->
                                 <?php
                                 include "koneksi.php";
                                 $query = "SELECT * from gejala";
@@ -62,7 +61,6 @@ include "koneksi.php";
                                     echo "<input type='checkbox' name='gejala[]' value=$data[kode]>$data[kode] $data[keterangan]<br>";
                                 }
                                 ?>
-                                <!-- > -->
                         </div>
                         <div>
                             <center>

@@ -10,8 +10,8 @@ $penyakit = $_POST ['penyakit'];
 $gejala = implode(",", $get_gejala);
 
 
-mysqli_query($koneksi, "INSERT INTO rules VALUES ('$kode','$gejala','$penyakit')");
-// echo $gejala;
+$data = mysqli_query($koneksi, "INSERT INTO rules VALUES ('$kode','$gejala','$penyakit')");
+// var_dump($data);
 
 header("location:../inputrules.php?pesan=input");  
 ?>

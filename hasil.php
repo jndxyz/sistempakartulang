@@ -24,22 +24,19 @@
                         <div class="banner-info">
                             <?php
                             include "koneksi.php";
-                            // $gejala = $_POST ['gejala'];
                             $gejala = $_GET['check_list'];
-
-                            // echo $get_gejala;
                             $get_gejala = implode(",", $gejala);
-                            // echo $get_gejala;
                             $data = mysqli_query($koneksi, "SELECT * from rules");
-                            if(mysqli_num_rows($data)>0) { 
-                                while($row = mysqli_fetch_assoc($data)){ 
-                                    // echo $row['gejala'];
-                                    if ($get_gejala == $row['gejala']){
-                                            echo $row['penyakit'];
+                            if (mysqli_num_rows($data) > 0) {
+                                while ($row = mysqli_fetch_assoc($data)) {
+                                    if ($get_gejala == $row['gejala']) {
+                                        echo "<h4>Berdasarkan hasil diagnosa dari gejala yang anda alami<br>";
+                                        echo "kemungkinan anda menderita penyakit <br>";
+                                        echo $row['penyakit'];
                                     }
                                 }
                             }
-                            
+
                             // var_dump($query);
                             // $row['gejala'];
                             // echo $row['gejala'];
@@ -48,6 +45,7 @@
                             // }else{
                             // }
                             ?>
+                            <br><a href="diagnosa.php">Kembali</a>
                         </div>
                     </div>
                 </div>
